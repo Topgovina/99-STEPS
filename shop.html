@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>99STEPS — Collection</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+        /* =========================
+           SHOP PAGE
+        ========================= */
+
+        .shop-hero {
+            min-height: 55vh;
+            background: var(--black);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 80px;
+        }
+
+        .shop-hero .small-title {
+            color: var(--gold);
+        }
+
+        .shop-hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(50px, 8vw, 100px);
+            margin: 10px 0;
+            letter-spacing: -3px;
+        }
+
+        .shop-hero p:last-child {
+            color: #bbb;
+            max-width: 550px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        .collection {
+            background: var(--cream);
+            padding: 80px 6%;
+        }
+
+        .collection-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 45px;
+            gap: 20px;
+        }
+
+        .collection-count {
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: var(--gray);
+        }
+
+        .collection-filter {
+            padding: 13px 18px;
+            border: 1px solid var(--line);
+            background: white;
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+
+        .shop-product {
+            cursor: pointer;
+        }
+
+        .shop-product-image {
+            position: relative;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            background: #eee;
+        }
+
+        .shop-product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s ease;
+        }
+
+        .shop-product:hover img {
+            transform: scale(1.04);
+        }
+
+        .shop-product-info {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding-top: 18px;
+        }
+
+        .shop-product-info h3 {
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .shop-product-info p {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        .shop-product-price {
+            font-size: 14px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="announcement">
+    FREE DELIVERY ON ORDERS OVER GH₵500
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+    <a href="./index.html" class="logo">
+        99<span>STEPS</span>
+    </a>
+
+    <nav class="nav-links">
+        <a href="./index.html#new">NEW IN</a>
+        <a href="./shop.html">SHOP</a>
+        <a href="./index.html#house">THE HOUSE</a>
+        <a href="./index.html#journal">JOURNAL</a>
+    </nav>
+
+    <div class="nav-actions">
+
+        <button class="nav-btn" id="searchBtn">
+            SEARCH
+        </button>
+
+        <button class="nav-btn" id="cartBtn">
+            BAG <span id="cartCount">(0)</span>
+        </button>
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="./index.html#new">NEW IN</a>
+    <a href="./shop.html">SHOP</a>
+    <a href="./index.html#house">THE HOUSE</a>
+    <a href="./index.html#journal">JOURNAL</a>
+
+</div>
+
+
+<!-- HERO -->
+<section class="shop-hero">
+
+    <div>
+
+        <p class="small-title">
+            99STEPS · 2026
+        </p>
+
+        <h1>
+            THE COLLECTION
+        </h1>
+
+        <p>
+            Premium essentials designed in Accra.
+            Built for movement, confidence and presence.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- COLLECTION -->
+<section class="collection">
+
+    <div class="collection-top">
+
+        <div>
+            <p class="small-title">
+                THE HOUSE
+            </p>
+
+            <h2>
+                99STEPS COLLECTION
+            </h2>
+        </div>
+
+        <div>
+            <span class="collection-count">
+                08 PRODUCTS
+            </span>
+
+            <select class="collection-filter">
+                <option>ALL PRODUCTS</option>
+                <option>NEW IN</option>
+                <option>BESTSELLERS</option>
+            </select>
+        </div>
+
+    </div>
+
+
+    <div class="shop-grid">
+
+        <!-- PRODUCT 1 -->
+        <article
+            class="shop-product product-card"
+            data-name="BLANC MAMBA"
+            data-price="229"
+            data-image="images/af1.jpeg"
+        >
+
+            <div class="shop-product-image">
+
+                <span class="product-tag">
+                    NEW
+                </span>
+
+                <img
+                    src="images/af1.jpeg"
+                    alt="BLANC MAMBA"
+                >
+
+                <button class="shop-quick-view quick-view">
+                    QUICK VIEW
+                </button>
+
+            </div>
+
+            <div class="shop-product-info">
+
+                <div>
+                    <h3>BLANC MAMBA</h3>
+                    <p>AFTER EARTH</p>
+                </div>
+
+                <strong class="shop-product-price">
+                    GH₵229
+                </strong>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 2 -->
+        <article
+            class="shop-product product-card"
+            data-name="WHITE ROME"
+            data-price="239"
+            data-image="images/af2.jpeg"
+        >
+
+            <div class="shop-product-image">
+
+                <img
+                    src="images/af2.jpeg"
+                    alt="WHITE ROME"
+                >
+
+                <button class="shop-quick-view quick-view">
+                    QUICK VIEW
+                </button>
+
+            </div>
+
+            <div class="shop-product-info">
+
+                <div>
+                    <h3>WHITE ROME</h3>
+                    <p>AFTER EARTH</p>
+                </div>
+
+                <strong class="shop-product-price">
+                    GH₵239
+                </strong>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 3 -->
+        <article
+            class="shop-product product-card"
+            data-name="VALID MAN"
+            data-price="229"
+            data-image="images/af3.jpeg"
+        >
+
+            <div class="shop-product-image">
+
+                <span class="product-tag">
+                    BESTSELLER
+                </span>
+
+                <img
+                    src="images/af3.jpeg"
+                    alt="VALID MAN"
+                >
+
+                <button class="shop-quick-view quick-view">
+                    QUICK VIEW
+                </button>
+
+            </div>
+
+            <div class="shop-product-info">
+
+                <div>
+                    <h3>VALID MAN</h3>
+                    <p>AFTER EARTH</p>
+                </div>
+
+                <strong class="shop-product-price">
+                    GH₵229
+                </strong>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 4 -->
+        <article
+            class="shop-product product-card"
+            data-name="COKE ANGEL"
+            data-price="249"
+            data-image="images/af4.jpeg"
+        >
+
+            <div class="shop-product-image">
+
+                <img
+                    src="images/af4.jpeg"
+                    alt="COKE ANGEL"
+                >
+
+                <button class="shop-quick-view quick-view">
+                    QUICK VIEW
+                </button>
+
+            </div>
+
+            <div class="shop-product-info">
+
+                <div>
+                    <h3>COKE ANGEL</h3>
+                    <p>AFTER EARTH</p>
+                </div>
+
+                <strong class="shop-product-price">
+                    GH₵249
+                </strong>
+
+            </div>
+
+        </article>
+                <!-- PRODUCT 5 -->
+        <article
+            class="shop-product product-card"
+            data-name="BLACK MAMBA"
+            data-price="229"
+            data-image="images/af15.jpeg"
+        >
+
+            <div class="shop-product-image">
+
+                <img
+                    src="images/af15.jpeg"
+                    alt="BLACK MAMBA"
+                >
+
+                <button class="shop-quick-view quick-view">
+                    QUICK VIEW
+                </button>
+
+            </div>
+
+            <div class="shop-product-info">
+
+                <div>
+                    <h3>BLACK MAMBA</h3>
+                    <p>AFTER EARTH</p>
+                </div>
+
+                <strong class="shop-product-price">
+                    GH₵229
+                </strong>
+
+            </div>
+
+        </article>
+                <!-- PRODUCT 6 -->
+        <article
+            class="shop-product product-card"
+            data-name="COKE ANGEL"
+            data-price="299"
+            data-image="images/af4.jpeg"
+        >
+
+            <div class="shop-product-image">
+
+                <img
+                    src="images/af4.jpeg"
+                    alt="COKE ANGEL"
+                >
+
+                <button class="shop-quick-view quick-view">
+                    QUICK VIEW
+                </button>
+
+            </div>
+
+            <div class="shop-product-info">
+
+                <div>
+                    <h3>COKE ANGEL</h3>
+                    <p>AFTER EARTH</p>
+                </div>
+
+                <strong class="shop-product-price">
+                    GH₵299
+                </strong>
+
+            </div>
+
+        </article>
+                <!-- PRODUCT 7 -->
+        <article
+            class="shop-product product-card"
+            data-name="COKE ANGEL"
+            data-price="299"
+            data-image="images/af4.jpeg"
+        >
+
+            <div class="shop-product-image">
+
+                <img
+                    src="images/af4.jpeg"
+                    alt="COKE ANGEL"
+                >
+
+                <button class="shop-quick-view quick-view">
+                    QUICK VIEW
+                </button>
+
+            </div>
+
+            <div class="shop-product-info">
+
+                <div>
+                    <h3>COKE ANGEL</h3>
+                    <p>AFTER EARTH</p>
+                </div>
+
+                <strong class="shop-product-price">
+                    GH₵299
+                </strong>
+
+            </div>
+
+        </article>
+                <!-- PRODUCT 8 -->
+        <article
+            class="shop-product product-card"
+            data-name="COKE ANGEL"
+            data-price="299"
+            data-image="images/af4.jpeg"
+        >
+
+            <div class="shop-product-image">
+
+                <img
+                    src="images/af4.jpeg"
+                    alt="COKE ANGEL"
+                >
+
+                <button class="shop-quick-view quick-view">
+                    QUICK VIEW
+                </button>
+
+            </div>
+
+            <div class="shop-product-info">
+
+                <div>
+                    <h3>COKE ANGEL</h3>
+                    <p>AFTER EARTH</p>
+                </div>
+
+                <strong class="shop-product-price">
+                    GH₵299
+                </strong>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
+
+            <div class="logo">
+                99<span>STEPS</span>
+            </div>
+
+            <p>
+                TOP GOVINA clothing.<br>
+                Designed in Accra. Made for everywhere.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>SHOP</h4>
+
+            <a href="./index.html#new">New In</a>
+            <a href="./shop.html">Tops</a>
+            <a href="./shop.html">Essentials</a>
+            <a href="./shop.html">New Season</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>HOUSE</h4>
+
+            <a href="./index.html#house">Our Story</a>
+            <a href="./index.html#journal">Journal</a>
+            <a href="#">Contact</a>
+            <a href="#">Shipping</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>FOLLOW</h4>
+
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">Facebook</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 TOP GOVINA · 99STEPS
+        </p>
+
+        <p>
+            STAY HIGH, DRESS HIGHER.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- SEARCH -->
+<div class="search-overlay" id="searchOverlay">
+
+    <button class="close-search" id="closeSearch">
+        ×
+    </button>
+
+    <div class="search-box">
+
+        <p>
+            SEARCH 99STEPS
+        </p>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+        >
+
+        <div id="searchResults"></div>
+
+    </div>
+
+</div>
+
+
+<!-- CART -->
+<aside class="cart-drawer" id="cartDrawer">
+
+    <div class="cart-header">
+
+        <h2>
+            Your Bag
+        </h2>
+
+        <button id="closeCart">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="cart-items" id="cartItems">
+
+        <p class="empty-cart">
+            Your bag is empty.
+        </p>
+
+    </div>
+
+
+    <div class="cart-footer">
+
+        <div class="subtotal">
+
+            <span>
+                SUBTOTAL
+            </span>
+
+            <strong id="cartTotal">
+                GH₵0
+            </strong>
+
+        </div>
+
+        <button class="checkout-btn">
+            CHECKOUT
+        </button>
+
+        <p>
+            Taxes and delivery calculated at checkout.
+        </p>
+
+    </div>
+
+</aside>
+
+
+<div class="cart-overlay" id="cartOverlay"></div>
+
+
+<!-- PRODUCT MODAL -->
+<div class="modal" id="productModal">
+
+    <div class="modal-content">
+
+        <button class="modal-close" id="closeModal">
+            ×
+        </button>
+
+        <div class="modal-image">
+
+            <img
+                id="modalImage"
+                src=""
+                alt=""
+            >
+
+        </div>
+
+
+        <div class="modal-details">
+
+            <p class="small-title">
+                AFTER EARTH
+            </p>
+
+            <h2 id="modalName">
+                Product
+            </h2>
+
+            <h3 id="modalPrice">
+                GH₵0
+            </h3>
+
+            <p>
+                Premium 99STEPS essential.
+                Designed for everyday movement.
+            </p>
+
+
+            <div class="size-selector">
+
+                <p>
+                    SELECT SIZE
+                </p>
+
+                <div class="sizes">
+
+                    <button data-size="S">
+                        S
+                    </button>
+
+                    <button data-size="M" class="active">
+                        M
+                    </button>
+
+                    <button data-size="L">
+                        L
+                    </button>
+
+                    <button data-size="XL">
+                        XL
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="gold-btn full-btn"
+                id="addToCartBtn"
+            >
+                ADD TO BAG
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+    Added to your bag.
+</div>
+
+
+<script src="./script.js"></script>
+
+</body>
+</html>
